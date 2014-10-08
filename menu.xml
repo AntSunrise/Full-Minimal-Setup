@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Interwebs">
+			<action name="Execute">
+				<command>x-www-browser</command>
+			</action>
+		</item>
+		<item label="urxvt">
+			<action name="Execute">
+				<command>/usr/bin/urxvtcd</command>
+			</action>
+		</item>
+		<item label="Thunar">
+			<action name="Execute">
+				<command>thunar</command>
+			</action>
+		</item>
+		<item label="IceDove">
+			<action name="Execute">
+				<command>/usr/bin/icedove</command>
+			</action>
+		</item>
+		<item label="Nicotine">
+			<action name="Execute">
+				<command>/usr/bin/nicotine</command>
+			</action>
+		</item>
+		<item label="Synaptic">
+			<action name="Execute">
+				<command>gksudo synaptic</command>
+			</action>
+		</item>
+		<item label="Geany">
+			<action name="Execute">
+				<command>geany</command>
+			</action>
+		</item>
+		<item label="Transmission">
+			<action name="Execute">
+				<command>/usr/bin/transmission-gtk</command>
+			</action>
+		</item>
+		<separator/>
+		<menu id="settings" label="Settings">
+			<menu id="obConfig" label="Openbox">
+				<item label="Edit menu.xml">
+					<action name="Execute">
+						<command>
+							geany ~/.config/openbox/menu.xml
+						</command>
+					</action>
+				</item>
+				<item label="Edit rc.xml">
+					<action name="Execute">
+						<command>
+							geany ~/.config/openbox/rc.xml
+						</command>
+					</action>
+				</item>
+				<item label="Edit autostart">
+					<action name="Execute">
+						<command>
+							geany ~/.config/openbox/autostart
+						</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="GUI Menu Editor">
+					<action name="Execute">
+						<command>
+							obmenu
+						</command>
+					</action>
+				</item>
+				<item label="GUI Applications Settings Editor">
+					<action name="Execute">
+						<command>
+							obapps
+						</command>
+					</action>
+				</item>
+				<item label="GUI Config Tool">
+					<action name="Execute">
+						<command>
+							obconf
+						</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="Reconfigure">
+					<action name="Reconfigure"/>
+				</item>
+				<item label="Restart">
+					<action name="Restart"/>
+				</item>
+			</menu>
+			<menu id="tint2config" label="tint2">
+				<item label="Edit config file">
+					<action name="Execute">
+						<command>
+							geany ~/.config/tint2/tint2rc
+						</command>
+					</action>
+				</item>
+				<item label="Restart tint2">
+					<action name="Execute">
+						<command>
+							tint2restart
+						</command>
+					</action>
+				</item>
+				<separator label="Help?"/>
+				<item label="man page">
+					<action name="Execute">
+						<command>
+							terminator --command=&quot;man tint2&quot;
+						</command>
+					</action>
+				</item>
+				<item label="Online Help">
+					<action name="Execute">
+						<command>
+							x-www-browser http://code.google.com/p/tint2/wiki/Welcome
+						</command>
+					</action>
+				</item>
+			</menu>
+			<menu id="DisplaySettings" label="Display Settings">
+				<item label="ARandR Screen Layout Editor">
+					<action name="Execute">
+						<command>
+						    arandr
+					    </command>
+					</action>
+				</item>
+				<separator label="Help?"/>
+				<item label="man xrandr">
+					<action name="Execute">
+						<command>
+						    terminator --command=&quot;man xrandr&quot;
+					    </command>
+					</action>
+				</item>
+			</menu>
+			<item label="Edit Default Applications">
+				<action name="Execute">
+					<command>
+						terminator --command=&quot;sudo update-alternatives --all&quot;
+					</command>
+				</action>
+			</item>
+			<item label="User Interface Settings">
+				<action name="Execute">
+					<command>
+						lxappearance
+					</command>
+				</action>
+			</item>
+			<item label="Power Management">
+				<action name="Execute">
+					<command>
+						xfce4-power-manager-settings
+					</command>
+				</action>
+			</item>
+			<item label="Screensaver">
+				<action name="Execute">
+					<command>
+						xscreensaver-demo
+					</command>
+				</action>
+			</item>
+			<item label="Choose Wallpaper">
+				<action name="Execute">
+					<command>
+						nitrogen ~/images/wallpapers/
+					</command>
+				</action>
+			</item>
+		</menu>
+		<menu id="system" label="System">
+			<item label="User Login Settings">
+				<action name="Execute">
+					<command>
+						gksudo slimconf
+					</command>
+				</action>
+			</item>
+		</menu>
+		<!--<menu id="help" label="Help" execute="cb-help-pipemenu" />-->
+		<separator/>
+		<item label="Exit">
+			<action name="Execute">
+				<command>
+					cb-exit
+				</command>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>
