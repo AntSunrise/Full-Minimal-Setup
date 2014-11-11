@@ -179,41 +179,29 @@ cases. -->
 <keyboard>
 <chainQuitKey>C-g</chainQuitKey>
 <!-- Keybindings for desktop switching -->
-<keybind key="XF86Calculator">
-    <action name="Execute"><execute>gcalctool</execute></action>
-</keybind>
-<keybind key="XF86WWW">
-    <action name="Execute"><execute>galeon</execute></action>
-</keybind>
-<keybind key="XF86Mail">
-    <action name="Execute"><execute>urxvt -g 100x44 -e mutt</execute></action>
-</keybind>
-<keybind key="XF86Messenger">
-    <action name="Execute"><execute>urxvt -g 100x44 -e centericq</execute></action>
-</keybind>
-<keybind key="XF86AudioMedia">
-    <action name="Execute"><execute>mpd</execute></action>
-</keybind>
-<keybind key="XF86AudioPlay">
-    <action name="Execute"><execute>mpc toggle</execute></action>
-</keybind>
-<keybind key="XF86AudioStop">
-    <action name="Execute"><execute>mpc stop</execute></action>
-</keybind>
-<keybind key="XF86AudioMute">
-    <action name="Execute"><execute>mpc toggle</execute></action>
-</keybind>
+<!-- Keybinding for Volume management -->
 <keybind key="XF86AudioRaiseVolume">
-    <action name="Execute"><execute>mpc volume +10</execute></action>
+    <action name="Execute">
+        <command>amixer -q sset Master -3% </command>
+    </action>
 </keybind>
-<keybind key="XF86AudioLowerVolume">
-    <action name="Execute"><execute>mpc volume -10</execute></action>
-</keybind>
-<keybind key="XF86AudioNext">
-    <action name="Execute"><execute>mpc next</execute></action>
-</keybind>
-<keybind key="XF86AudioPrev">
-    <action name="Execute"><execute>mpc prev</execute></action>
+<!-- Keybinding for Volume management -->
+<keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer sset Master,0 3%+</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer sset Master,0 3%-</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer sset Master,0 toggle</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
 </keybind>
 
 <!-- These are the Zoom keys on the left. I use them to launch rox and 
